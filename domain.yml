@@ -1,0 +1,48 @@
+version: "2.0"
+
+intents:
+- greet:
+- future:
+    use_entities: true
+- theme:
+    use_entities: true
+- concept:
+    use_entities: true
+- vision:
+    use_entities: true
+  
+entities:
+- future_theme:
+- future_concept:
+- future_year:
+
+
+
+slots:
+  future:
+    type : text
+  theme:
+    type : text
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_future_concept:
+  - text: "Welcome to the future"
+  
+  utter_future_theme:
+  - text: "input your future theme"
+
+  utter_future_year:
+  - text: "target your future year"
+
+  utter_show_future_concept:
+  - text: "your theme{theme} is making future{future} world!"
+
+actions:
+- action_hello_world
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
